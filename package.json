@@ -1,11 +1,12 @@
 {
-  "name": "verifixs_portal",
-  "version": "1.0.0",
-  "description": "verifixs website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Delimond-eng@RTGroup",
-  "license": "ISC"
+    "name": "verifixs_portal",
+    "version": "1.0.0",
+    "description": "verifixs website",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/main.js"
+    },
+    "author": "Delimond-eng@RTGroup",
+    "license": "ISC"
 }
