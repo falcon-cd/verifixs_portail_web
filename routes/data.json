@@ -1,0 +1,39 @@
+{
+    "diligences": [{
+            "diligence_id": 1,
+            "diligence_title": "Diligence basique complète",
+            "diligence_desc": "La diligence de base consiste à obtenir des informations afin de confirmer votre identité, telles que votre nom, votre adresse et votre date de naissance.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        },
+        {
+            "diligence_id": 2,
+            "diligence_title": "Rapport diligence financière",
+            "diligence_desc": "L'un des types les plus importants de due diligence est le rapport de diligence financière qui vise à vérifier l’exactitude de votre déclaration financière. La due diligence financière vise à fournir une compréhension approfondie de la situation financière d’une personne morale ou physique, comme les crédits obtenus et/ou les dettes en cours. Ces informations permettront à la personne de prendre une meilleure décision avant de s'engager.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        },
+        {
+            "diligence_id": 3,
+            "diligence_title": "Antécédents juridiques",
+            "diligence_desc": "L'objectif d'une vérification du casier judiciaire est de présenter un historique complet des antécédents criminels d'une personne. Les casiers judiciaires peuvent être utilisés à de nombreuses fins, notamment pour vérifier les antécédents à des fins d'emploi, d'habilitation de sécurité, d'adoption, d'immigration dans un pays et d'octroi de licences.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        },
+        {
+            "diligence_id": 4,
+            "diligence_title": "Diligence sur actifs",
+            "diligence_desc": "Un autre type de diligence raisonnable est la due diligence des actifs. Les rapports de diligence raisonnable sur les actifs comprennent généralement des informations détaillées sur les actifs détenus, leur valeur actuelle et la confirmation que les actifs appartiennent au propriétaire déclaré. Ces informations peuvent être communiquées à la banque, à un investisseur, etc.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        },
+        {
+            "diligence_id": 5,
+            "diligence_title": "Diligence complète ",
+            "diligence_desc": "Cette due diligence complète comprend toutes les vérifications susmentionnées, couvrant à 360 degrés l'identité, le casier judiciaire, les actifs et la responsabilité financière d'une personne.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        },
+        {
+            "diligence_id": 6,
+            "diligence_title": "Vérification fournisseur ",
+            "diligence_desc": "Le contrôle préalable des fournisseurs est le processus par lequel une entreprise ou une agence effectue des vérifications au nom d'une entreprise pour s'assurer que ses fournisseurs sont des organisations légitimes, crédibles et en conformité avec les autorités réglementaires locales.Un contrôle préalable approfondi des fournisseurs vous aide à déterminer si vous devez faire des affaires avec un fournisseur particulier. Ce processus implique la sélection, la vérification, l'intégration et le suivi de vos partenaires et de leurs activités.",
+            "diligence_img": "assets/images/sites/img-basic-diligence.png"
+        }
+    ]
+}
