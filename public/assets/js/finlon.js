@@ -27,8 +27,8 @@
       connect: [true, false],
       range: {
         min: 1,
-        max: 12
-      }
+        max: 12,
+      },
     });
 
     noUiSlider.create(countRange, {
@@ -39,8 +39,8 @@
       connect: [true, false],
       range: {
         min: 1000,
-        max: 40000
-      }
+        max: 40000,
+      },
     });
 
     monthRange.noUiSlider.on("update", function (values, handle) {
@@ -129,10 +129,10 @@
         if (!$t.hasClass("counted")) {
           $t.addClass("counted");
           $({
-            countNum: $t.find(".count-text").text()
+            countNum: $t.find(".count-text").text(),
           }).animate(
             {
-              countNum: n
+              countNum: n,
             },
             {
               duration: r,
@@ -142,13 +142,13 @@
               },
               complete: function () {
                 $t.find(".count-text").text(this.countNum);
-              }
+              },
             }
           );
         }
       },
       {
-        accY: 0
+        accY: 0,
       }
     );
   }
@@ -161,7 +161,7 @@
         $(el).css("width", percent).addClass("counted");
       },
       {
-        accY: -50
+        accY: -50,
       }
     );
   }
@@ -184,7 +184,7 @@
           "<li> <div class='seconds'> <i>" +
           date.sec +
           "</i> <span>Seconds</span> </div> </li>";
-      }
+      },
     });
   }
 
@@ -194,7 +194,7 @@
       // animate
       $("html, body").animate(
         {
-          scrollTop: $(target).offset().top
+          scrollTop: $(target).offset().top,
         },
         1000
       );
@@ -208,18 +208,18 @@
       // initialize the plugin
       rules: {
         name: {
-          required: true
+          required: true,
         },
         email: {
           required: true,
-          email: true
+          email: true,
         },
         message: {
-          required: true
+          required: true,
         },
         subject: {
-          required: true
-        }
+          required: true,
+        },
       },
       submitHandler: function (form) {
         // sending value with ajax request
@@ -234,7 +234,7 @@
           }
         );
         return false;
-      }
+      },
     });
   }
 
@@ -268,7 +268,7 @@
 
             mcResp.find("p").fadeOut(10000);
           }
-        }
+        },
       });
     });
   }
@@ -280,7 +280,7 @@
       removalDelay: 160,
       preloader: true,
 
-      fixedContentPos: false
+      fixedContentPos: false,
     });
   }
 
@@ -302,8 +302,8 @@
         closeOnContentClick: true,
         closeBtnInside: false,
         gallery: {
-          enabled: true
-        }
+          enabled: true,
+        },
       });
     });
   }
@@ -412,7 +412,7 @@
       boxClass: "wow", // animated element css class (default is wow)
       animateClass: "animated", // animation css class (default is animated)
       mobile: true, // trigger animations on mobile devices (default is true)
-      live: true // act on asynchronously loaded content (default is true)
+      live: true, // act on asynchronously loaded content (default is true)
     });
     wow.init();
   }
@@ -486,8 +486,8 @@
       connect: true,
       range: {
         min: 10,
-        max: 200
-      }
+        max: 200,
+      },
     });
 
     var limitFieldMin = document.getElementById("min-value-rangeslider");
@@ -606,8 +606,8 @@
         animationOptions: {
           duration: 500,
           easing: "linear",
-          queue: false
-        }
+          queue: false,
+        },
       });
       // on click filter links
       postFilterList.on("click", function () {
@@ -621,8 +621,8 @@
           animationOptions: {
             duration: 500,
             easing: "linear",
-            queue: false
-          }
+            queue: false,
+          },
         });
         return false;
       });
