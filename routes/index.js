@@ -19,6 +19,12 @@ router.get("/about", (req, res) => {
   res.render("pages/about", { title: "A propos" });
 });
 
+
+router.get("/scan", (req, res) => {
+  res.render("pages/scan", { title: "Scanner le code QR" });
+});
+
+
 router.get("/services/:id", (req, res) => {
   let rawdata = fs.readFileSync(__dirname + "/data.json");
   let data = JSON.parse(rawdata);

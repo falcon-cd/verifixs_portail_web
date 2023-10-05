@@ -1,5 +1,8 @@
 <%- include('../partials/styles.ejs')%>
 
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+
     <body>
         <!-- /.preloader -->
         <div class="page-wrapper">
@@ -49,7 +52,7 @@
                                 <ul class="main-menu__list">
                                     <li><a href="/">Accueil</a></li>
                                     <li><a href="/#abouts">A Propos</a></li>
-                                    <li class="current"><a href="/#services">Services</a></li>
+                                    <li ><a href="/#services">Services</a></li>
                                     <li><a href="/#contacts">Contact</a></li>
                                 </ul>
                             </div>
@@ -111,77 +114,76 @@
                 </div>
 
 
-                <section class="page-header">
-                    <div class="page-header__bg"
-                        style="background-image: url(assets/images/shapes/testi-3-map-1-1.png);">
-                    </div>
-                    <!-- /.page-header__bg -->
-                    <div class="container">
-                        <ul class="thm-breadcrumb list-unstyled">
-                            <li><a href="/">Accueil</a></li>
-                            <li><span class="fw-bold">Services</span></li>
-                        </ul>
-                        <!-- /.thm-breadcrumb list-unstyled -->
-                        <h2>
-                            <%=diligence.diligence_title%>
-                        </h2>
+                <div class="main-scan">
+                    <div class="scan-card">
+                      <div class="text">
+                        <h2>SCAN QR CODE</h2>
+                      </div>
+                      <div id="cam-zone">
+                        <div id="qr-reader" style="max-width:400px"></div>
+                        <div id="qr-reader-results"></div>
+                      </div>
+                      
+                      <div id="qr-zone"  class="qr-zone">
+                        <img style="border-radius: 20px;" class="scan-image-placeholder img-fluid" src="assets/images/qr-scan-img.jpg"
+                            onclick="goTocam()"  />
+                      </div>
+                      <script>
+                        var qrZone = document.getElementById("qr-zone");
+                        var camZone = document.getElementById("cam-zone");
+                        var resultContainer = document.getElementById('qr-reader-results');
+                        // var lastResult, countResults = 0;
 
+                        function goTocam(){
+                            html5QrcodeScanner.render(onScanSuccess);
+                            qrZone.style.display = "none"
+                            camZone.style.display = "block"  
+                        }
+
+                        
+                    
+                        function onScanSuccess(decodedText, decodedResult) {
+                            if (decodedText) {
+                                // ++countResults;
+                                // lastResult = decodedText;
+                                qrZone.style.display = "block"
+                                camZone.style.display = "none" 
+                                document.getElementById("html5-qrcode-button-camera-stop").click();
+                                alert(decodedText) 
+                                // Handle on success condition with the decoded message.
+                                console.log(`Scan result ${decodedText}`, decodedResult);
+                            }
+                        }
+                    
+
+                        var html5QrcodeScanner = new Html5QrcodeScanner(
+                            "qr-reader", { fps: 10, qrbox: 250 });
+                    </script>
+            
+                      <!--<div class="scan-input">
+                      <input style="display: none;" v-model="reference" class="" type="text" placeholder="Saisir n° de référence..." />
+                      <button style="display: none;" type="button" @click.prevent="authentifier">
+                        <svg
+                          style="height: 20px; width: 200px; color: #ffffff"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="17"
+                          height="7"
+                          fill="#FFFFFF"
+                          class="bi bi-arrow-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                          />
+                        </svg>
+                      </button>
+                    </div>-->
                     </div>
-                    <!-- /.container -->
-                </section>
+                  </div>
                 <!-- /.page-header -->
-                <section class="service-details pt-120 pb-120">
-                    <div class="container">
-                        <div class="row row-gutter-y-30">
-                            <div class="col-lg-4">
-                                <div class="service-sidebar">
-                                    <div class="service-sidebar__item service-sidebar__item--menu">
-                                        <ul class="service-sidebar__menu">
-                                            <% for(let i=0; i < diligences.length; i++){ %>
-                                                <li
-                                                    class="<%= diligences[i].diligence_id==diligence.diligence_id ? 'active': '' %>">
-                                                    <a href="/services/<%= diligences[i].diligence_id %>">
-                                                        <%=diligences[i].diligence_title%>
-                                                    </a>
-                                                </li>
-                                                <% } %>
-
-                                        </ul>
-                                    </div>
-                                    <!-- /.service-sidebar__item -->
-
-                                </div>
-                                <!-- /.service-sidebar -->
-                            </div>
-                            <!-- /.col-lg-4 -->
-                            <div class="col-lg-8">
-                                <div class="service-details__image">
-                                    <img src="<%=diligence.diligence_img %>" alt="">
-
-                                    <!-- /.service-details__icon -->
-                                </div>
-                                <!-- /.service-details__image -->
-                                <div class="service-details__content">
-                                    <h3 class="service-details__title">
-                                        <%=diligence.diligence_title %>
-                                    </h3>
-                                    <!-- /.service-details__title -->
-                                    <p>
-                                        <%=diligence.diligence_desc %>
-                                    </p>
-
-
-                                </div>
-                                <!-- /.service-details__content -->
-                            </div>
-                            <!-- /.col-lg-8 -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container -->
-                </section>
+               
                 <!-- /.service-details -->
-                <%- include('../partials/subscribe.ejs')%>
 
 
                     <%- include('../partials/footer.ejs')%>
