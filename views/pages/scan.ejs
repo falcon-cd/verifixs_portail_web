@@ -149,9 +149,9 @@
                                 qrZone.style.display = "block"
                                 camZone.style.display = "none" 
                                 document.getElementById("html5-qrcode-button-camera-stop").click();
-                                alert(decodedText) 
+                                let url = `https://portal.verifix.cd/view-diligence/${decodedText}`
                                 // Handle on success condition with the decoded message.
-                                console.log(`Scan result ${decodedText}`, decodedResult);
+                                window.open(url);
                             }
                         }
                     
